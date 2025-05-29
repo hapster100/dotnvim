@@ -15,15 +15,19 @@ return {
                         enable = true,
                         show_on_dirs = true,
                     },
+                    filters = {
+                        git_clean = true,
+                    },
+                    view = {
+                        side = "right",
+                    },
                 })
                 is_active = true
             end
         end
 
         local function toggleTree()
-            if not is_active then
-                setupTree()
-            end
+            setupTree()
             nvtreeapi.tree.toggle()
         end
 
@@ -31,6 +35,13 @@ return {
             setupTree()
         end
 
+        local function toggleGitFilter()
+            setupTree()
+            nvtreeapi.tree.open()
+            nvtreeapi.tree.toggle_git_clean_filter()
+        end
+
+        vim.keymap.set("n", "<leader>tg", toggleGitFilter, {})
         vim.keymap.set("n", "<leader>tt", toggleTree, {})
     end,
 }

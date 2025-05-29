@@ -7,6 +7,7 @@ return {
             local tel_bin = require("telescope.builtin")
             vim.keymap.set("n", "<leader>ff", tel_bin.find_files, {})
             vim.keymap.set("n", "<leader>fg", tel_bin.live_grep, {})
+            vim.keymap.set("n", "<leader>fh", tel_bin.help_tags, {})
         end,
     },
     {
