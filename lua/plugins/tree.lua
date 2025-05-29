@@ -37,7 +37,12 @@ return {
             nvtreeapi.tree.open()
             nvtreeapi.tree.toggle_git_clean_filter()
         end
+        local function refreshTree() 
+            setupTree()
+            nvtreeapi.tree.reload()
+        end
 
+        vim.keymap.set('n', '<leader>tr', refreshTree, {})
         vim.keymap.set("n", "<leader>tg", toggleGitFilter, {})
         vim.keymap.set("n", "<leader>tt", toggleTree, {})
     end,
