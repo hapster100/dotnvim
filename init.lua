@@ -40,6 +40,8 @@ vim.keymap.set("n", "<A-j>", "ddp")
 vim.keymap.set("n", "<leader>.", vim.lsp.buf.hover, {})
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
 vim.keymap.set("n", "<leader>td", vim.lsp.buf.definition, {})
+vim.keymap.set("n", "<leader>qt", vim.cmd.tabc, {})
+vim.keymap.set("n", "<leader>qq", vim.cmd.q, {})
 
 require("nvim-web-devicons").refresh()
 vim.cmd("cd %")

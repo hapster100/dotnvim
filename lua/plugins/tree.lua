@@ -15,9 +15,6 @@ return {
                         enable = true,
                         show_on_dirs = true,
                     },
-                    filters = {
-                        git_clean = true,
-                    },
                     view = {
                         side = "right",
                     },
