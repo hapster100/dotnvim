@@ -20,6 +20,16 @@ return {
         end
     },
     {
+        'nvim-treesitter/nvim-treesitter-context',
+        config = function ()
+            require('treesitter-context').setup({
+                enable = true,
+                line_numbers = true,
+                separator = '─',
+            })
+        end
+    },
+    {
         'nvim-treesitter/playground',
         config = function()
             require('nvim-treesitter.configs').setup({
