@@ -48,4 +48,3 @@ vim.api.nvim_set_hl(0, "NeogitDiffDeleteHighlight", { fg = "#c05746", bold = tru
 vim.api.nvim_set_hl(0, "NeogitDiffContextHighlight", { fg = "#65696A", bold = true })
 vim.api.nvim_set_hl(0, "NeogitDiffHeaderHighlight", { fg = "#ffb100", bold = true })
 vim.api.nvim_set_hl(0, "NeogitHunkHeaderHighlight", { bg = "#11262D", fg = "#f9cf79" })
-

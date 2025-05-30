@@ -16,8 +16,8 @@ vim.opt.cursorline = true
 -- COLORS SETUP
 vim.cmd(":source ~/.config/nvim/mycs.vim")
 
-require('colors.neogit')
-require('colors.nvimtree')
+require("colors_nvimtree")
+require("colors_neogit")
 
 vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = "none", fg = "#ffb100" })
 vim.api.nvim_set_hl(0, "TelescopePromptCounter", { bg = "none", fg = "#c05746" })
@@ -34,7 +34,6 @@ vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none", fg = "#ffb100" })
 vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#ffb100" })
 vim.api.nvim_set_hl(0, "TreesitterContext", { bg = "#11262D" })
 vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { bg = "#11262D", fg = "#ffb100" })
-
 
 -- KEYS SETUP
 vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)

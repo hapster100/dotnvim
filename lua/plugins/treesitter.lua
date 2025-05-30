@@ -1,15 +1,28 @@
 return {
     {
-        'nvim-treesitter/nvim-treesitter',
-        branch = 'master',
+        "nvim-treesitter/nvim-treesitter",
+        branch = "master",
         lazy = false,
         build = ":TSUpdate",
-        config = function ()
-            local ts_conf = require('nvim-treesitter.configs')
+        config = function()
+            local ts_conf = require("nvim-treesitter.configs")
             ts_conf.setup({
                 ensure_installed = {
-                    'bash', 'c', 'cpp', 'css', 'csv', 'dart', 'go', 'html', 'javascript',
-                    'lua', 'markdown', 'scss', 'svelte', 'json', 'typescript',
+                    "bash",
+                    "c",
+                    "cpp",
+                    "css",
+                    "csv",
+                    "dart",
+                    "go",
+                    "html",
+                    "javascript",
+                    "lua",
+                    "markdown",
+                    "scss",
+                    "svelte",
+                    "json",
+                    "typescript",
                 },
                 sync_install = false,
                 auto_install = false,
@@ -17,26 +30,26 @@ return {
                 highlight = { enable = true },
                 indent = { enable = true },
             })
-        end
+        end,
     },
     {
-        'nvim-treesitter/nvim-treesitter-context',
-        config = function ()
-            require('treesitter-context').setup({
+        "nvim-treesitter/nvim-treesitter-context",
+        config = function()
+            require("treesitter-context").setup({
                 enable = true,
                 line_numbers = true,
-                separator = '─',
+                separator = "─",
             })
-        end
+        end,
     },
     {
-        'nvim-treesitter/playground',
+        "nvim-treesitter/playground",
         config = function()
-            require('nvim-treesitter.configs').setup({
+            require("nvim-treesitter.configs").setup({
                 playground = {
-                    enable = true
-                }
+                    enable = true,
+                },
             })
-        end
-    }
+        end,
+    },
 }
