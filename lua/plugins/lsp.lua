@@ -9,7 +9,7 @@ return {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "ts_ls", "eslint-lsp", "css-lsp" },
+                ensure_installed = { "lua_ls", "ts_ls", "eslint", "cssls", "gopls" },
             })
         end,
     },
@@ -23,6 +23,12 @@ return {
             })
             lspconfig.ts_ls.setup({
                 capabilities = capabls,
+            })
+            vim.lsp.enable('dartls', {
+                on_attach = function()
+                    print('hello dart')
+                    vim.cmd(":setlocal shiftwidth=2 softtabstop=2 expandtab")
+                end
             })
         end,
     },

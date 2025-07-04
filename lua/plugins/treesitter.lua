@@ -23,6 +23,7 @@ return {
                     "svelte",
                     "json",
                     "typescript",
+                    "pug",
                 },
                 sync_install = false,
                 auto_install = false,

@@ -1,5 +1,6 @@
 LAZY_TREE = false
 
+vim.cmd(":source ~/.config/nvim/mycs.vim")
 require("config.lazy")
 
 -- VIM.OPT SETUP
@@ -14,7 +15,6 @@ vim.opt.colorcolumn = { 81, 101 }
 vim.opt.cursorline = true
 
 -- COLORS SETUP
-vim.cmd(":source ~/.config/nvim/mycs.vim")
 
 require("colors_nvimtree")
 require("colors_neogit")
@@ -27,13 +27,16 @@ vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "none", fg = "#ffb100" })
 vim.api.nvim_set_hl(0, "CursorLine", { bg = "#11262D" })
 vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#11262D" })
 vim.api.nvim_set_hl(0, "Visual", { bg = "#11262D" })
-vim.api.nvim_set_hl(0, "StatusLine", { bg = "#c05746" })
+vim.api.nvim_set_hl(0, "StatusLine", { bg = "#ffb100" })
 vim.api.nvim_set_hl(0, "@tag", { fg = "#c05746" })
 vim.api.nvim_set_hl(0, "@tag.builtin", { fg = "#f45B1B" })
 vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none", fg = "#ffb100" })
 vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#ffb100" })
 vim.api.nvim_set_hl(0, "TreesitterContext", { bg = "#11262D" })
 vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { bg = "#11262D", fg = "#ffb100" })
+vim.api.nvim_set_hl(0, "DashboardProjectTitle", { fg = "#c05746" })
+vim.api.nvim_set_hl(0, "DashboardMruTitle", { fg = "#c05746" })
+vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "#ffb100" })
 
 -- KEYS SETUP
 vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
@@ -54,11 +57,17 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "/", ":set hlsearch<CR>/")
 
 vim.keymap.set("n", "<leader>.", vim.lsp.buf.hover, {})
+vim.keymap.set('n', "<leader>,", function()
+    vim.diagnostic.open_float({ border = 'rounded' })
+end, {})
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
 vim.keymap.set("n", "<leader>td", vim.lsp.buf.definition, {})
 vim.keymap.set("n", "<leader>qt", vim.cmd.tabc, {})
 vim.keymap.set("n", "<leader>qq", vim.cmd.q, {})
-vim.keymap.set("n", "<leader>z{", "vi{zf")
+vim.keymap.set("n", "<leader>z{", "vi{zf", {})
 vim.keymap.set("n", "<leader>nh", vim.cmd.noh, {})
+vim.keymap.set('n', '<leader>db', vim.cmd.DBUIToggle, {})
+vim.keymap.set('n', '<leader>cn', ':cnext<cr>', {})
+vim.keymap.set('n', '<leader>cp', ':cprev<cr>', {})
 
 require("nvim-web-devicons").refresh()
