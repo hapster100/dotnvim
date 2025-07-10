@@ -41,9 +41,14 @@ return {
             setupTree()
             nvtreeapi.tree.reload()
         end
+        local function findFile()
+            setupTree()
+            nvtreeapi.tree.find_file()
+        end
 
         vim.keymap.set("n", "<leader>tr", refreshTree, {})
         vim.keymap.set("n", "<leader>tg", toggleGitFilter, {})
         vim.keymap.set("n", "<leader>tt", toggleTree, {})
+        vim.keymap.set('n', '<leader>tf', findFile, {})
     end,
 }
