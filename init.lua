@@ -56,10 +56,10 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "/", ":set hlsearch<CR>/")
 
 vim.keymap.set("n", "<leader>.", vim.lsp.buf.hover, {})
-vim.keymap.set('n', '<leader>,', function()
-    vim.diagnostic.open_float({
-        border = 'rounded'
-    })
+vim.keymap.set("n", "<leader>,", function()
+	vim.diagnostic.open_float({
+		border = "rounded",
+	})
 end, {})
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
 vim.keymap.set("n", "<leader>td", vim.lsp.buf.definition, {})
@@ -70,6 +70,7 @@ vim.keymap.set("n", "<leader>nh", vim.cmd.noh, {})
 vim.keymap.set("n", "<leader>db", vim.cmd.DBUIToggle, {})
 vim.keymap.set("n", "<leader>cn", ":cnext<CR>", {})
 vim.keymap.set("n", "<leader>cp", ":cprev<CR>", {})
+vim.keymap.set("n", "<leader>cc", ":cclose<CR>", {})
 
 require("nvim-web-devicons").refresh()
 require("lualine").setup()
