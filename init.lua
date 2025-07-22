@@ -18,10 +18,8 @@ vim.opt.foldlevel=10
 
 -- COLORS SETUP
 vim.cmd(":source ~/.config/nvim/mycs.vim")
-
 require("colors_nvimtree")
 require("colors_neogit")
-
 vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = "none", fg = "#ffb100" })
 vim.api.nvim_set_hl(0, "TelescopePromptCounter", { bg = "none", fg = "#c05746" })
 vim.api.nvim_set_hl(0, "TelescopePromptPrefix", { bg = "none", fg = "#c05746" })
@@ -39,7 +37,8 @@ vim.api.nvim_set_hl(0, "TreesitterContext", { bg = "#11262D" })
 vim.api.nvim_set_hl(0, "TreesitterContextLineNumber", { bg = "#11262D", fg = "#ffb100" })
 vim.api.nvim_set_hl(0, "DashboardProjectTitle", { fg = "#c05746" })
 vim.api.nvim_set_hl(0, "DashboardMruTitle", { fg = "#c05746" })
-vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "#ffB100" })
+vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "#ffb100" })
+
 -- KEYS SETUP
 vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
 

@@ -24,6 +24,7 @@ return {
             lspconfig.ts_ls.setup({
                 capabilities = capabls,
             })
+            vim.lsp.enable('dartls')
         end,
     },
 }
