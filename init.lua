@@ -12,6 +12,9 @@ vim.opt.number = true
 vim.opt.wrap = false
 vim.opt.colorcolumn = { 81, 101 }
 vim.opt.cursorline = true
+vim.opt.foldmethod='expr'
+vim.opt.foldexpr='nvim_treesitter#foldexpr()'
+vim.opt.foldlevel=10
 
 -- COLORS SETUP
 vim.cmd(":source ~/.config/nvim/mycs.vim")
@@ -43,7 +46,6 @@ vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
 vim.keymap.set("n", "<S-Down>", ":move+1<CR>")
 vim.keymap.set("n", "<S-j>", ":move+1<CR>")
 vim.keymap.set("x", "<S-j>", ":move '>+1<CR>gv")
-
 vim.keymap.set("n", "<s-up>", ":move-2<CR>")
 vim.keymap.set("n", "<s-k>", ":move-2<CR>")
 vim.keymap.set("x", "<s-k>", ":move-2<CR>gv")
@@ -52,7 +54,6 @@ vim.keymap.set("n", "<c-b>", "<c-b>zz")
 vim.keymap.set("n", "<C-f>", "<C-f>zz")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
-
 vim.keymap.set("n", "/", ":set hlsearch<CR>/")
 
 vim.keymap.set("n", "<leader>.", vim.lsp.buf.hover, {})
@@ -65,12 +66,12 @@ vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
 vim.keymap.set("n", "<leader>td", vim.lsp.buf.definition, {})
 vim.keymap.set("n", "<leader>qt", vim.cmd.tabc, {})
 vim.keymap.set("n", "<leader>qq", vim.cmd.q, {})
-vim.keymap.set("n", "<leader>z{", "vi{zf")
 vim.keymap.set("n", "<leader>nh", vim.cmd.noh, {})
 vim.keymap.set("n", "<leader>db", vim.cmd.DBUIToggle, {})
-vim.keymap.set("n", "<leader>cn", ":cnext<CR>", {})
-vim.keymap.set("n", "<leader>cp", ":cprev<CR>", {})
-vim.keymap.set("n", "<leader>cc", ":cclose<CR>", {})
+vim.keymap.set("n", "<leader>cn", vim.cmd.cnext, {})
+vim.keymap.set("n", "<leader>cp", vim.cmd.cprev, {})
+vim.keymap.set("n", "<leader>cc", vim.cmd.cclose, {})
+vim.keymap.set("n", "<leader>co", vim.cmd.CurlOpen, {})
 
 require("nvim-web-devicons").refresh()
 require("lualine").setup()
